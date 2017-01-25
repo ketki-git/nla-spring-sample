@@ -1,0 +1,56 @@
+.nla {
+    background: none repeat scroll 0 0 #000;
+    color: #fff;
+    min-height: 36px;
+    letter-spacing: 0.7em;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    border-bottom: 6px solid #b3d564;
+    padding: 4px 2000px;
+    margin: 0 -2000px;
+    font-family: sans-serif;
+}
+
+.panel-body {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+body{    
+	font-family: sans-serif;
+	font-size: 14px !important;
+}
+
+.btn, .dropdown-menu {
+	font-size: 14px;
+}
+
+#searchBooks, #searchCustomers{
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 42px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+.panel-body {
+    padding-left: 0px;
+}
+
+.container.article {
+    padding-left: 25px;
+}
+
+#navigation {    
+    height: 46px;
+    padding-left: 0px;
+    border-top: 0px;
+    border-bottom: 3px solid #ccc;
+}
+
+#navigation .om-maximenu ul.om-menu li.om-leaf a {
+    position: none;
+    font-size: 1.5em;
+}
