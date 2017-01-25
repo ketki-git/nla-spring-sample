@@ -7,6 +7,8 @@ public class Customer {
 	private String customerCity;
 	private String customerState;
 	private String customerZip;
+	private String customerPhone;
+	private String customerEmail;
 
 	public Long getCustomerId() {
 		return customerId;
@@ -56,10 +58,27 @@ public class Customer {
 		this.customerZip = customerZip;
 	}
 
+	public String getCustomerPhone() {
+		return customerPhone;
+	}
+
+	public void setCustomerPhone(String customerPhone) {
+		this.customerPhone = customerPhone;
+	}
+
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail;
+	}
+
 	@Override
 	public String toString() {
 		return "[ Customer Id : " + customerId + ", Customer Name : " + customerName + ", Customer Address : "
 				+ customerAddress + ", Customer City : " + customerCity + ", Customer State : " + customerState
-				+ ", Customer Zip Code : " + customerZip + "]";
+				+ ", Customer Zip Code : " + customerZip + ", Customer Phone : " + customerPhone + ", Customer Email : "
+				+ customerEmail + "]";
 	}
 }

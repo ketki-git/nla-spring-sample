@@ -30,24 +30,36 @@
 						      		<b>Address:</b><br/>
 						      		${borrower.customerAddress}, 
 						      		${borrower.customerCity}<br/>
-						      		${borrower.customerState} - ${borrower.customerZip}
+						      		${borrower.customerState} - ${borrower.customerZip}<br/><br/>
+						      		<b>Phone:</b> ${borrower.customerPhone}<br/><br/>
+						      		<b>Email:</b> ${borrower.customerEmail}
 						      </div>
 						    </div>
 						</td>	
 						
 						<td>
-			        		<c:if test="${not empty booksBorrowed}">
-			        			${fn:length(booksBorrowed)}	        			
-			        		</c:if>
+							<c:choose>
+				        		<c:when test="${not empty booksBorrowed}">
+				        			${fn:length(booksBorrowed)}	        			
+				        		</c:when>
+				        		<c:otherwise>
+							        None
+							    </c:otherwise>
+				        	</c:choose>
 			        	</td>	
 			        			        	
 			        	<td>
-			        		<c:if test="${not empty booksBorrowed}">
-			        			<c:forEach var="listValue" items="${booksBorrowed}">			        				
-			        				<b>Title: </b>${listValue.title}<br/>
-			        				<b>Author: </b>${listValue.author}<br/><br/>
-			        			</c:forEach>			        			
-			        		</c:if>
+			        		<c:choose>
+				        		<c:when test="${not empty booksBorrowed}">
+				        			<c:forEach var="listValue" items="${booksBorrowed}">			        				
+				        				<b>Title: </b>${listValue.title}<br/>
+				        				<b>Author: </b>${listValue.author}<br/><br/>
+				        			</c:forEach>			        			
+				        		</c:when>
+				        		<c:otherwise>
+							        None
+							    </c:otherwise>
+			        		</c:choose>
 			        	</td>			        			       
 			    	</tr>   			
 			</tbody>

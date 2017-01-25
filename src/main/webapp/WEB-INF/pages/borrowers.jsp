@@ -33,6 +33,9 @@
 						      		${listValue.customerAddress}, 
 						      		${listValue.customerCity}<br/>
 						      		${listValue.customerState} - ${listValue.customerZip}
+						      		<br/>
+						      		<b>Phone:</b> ${listValue.customerPhone}<br/>
+						      		<b>Email:</b> ${listValue.customerEmail}
 						      </div>
 						    </div>
 						</td>			        	

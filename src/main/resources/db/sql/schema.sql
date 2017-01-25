@@ -6,7 +6,9 @@ CREATE TABLE CUSTOMER (
     CUSTOMER_ADDRESS varchar(255),
     CUSTOMER_CITY varchar(50) not null,
     CUSTOMER_STATE varchar(50) not null,
-    CUSTOMER_ZIP_POSTAL varchar(30) not null
+    CUSTOMER_ZIP_POSTAL varchar(30) not null,
+    CUSTOMER_PHONE varchar(50),
+    CUSTOMER_EMAIL varchar(50) 
 );
 
 DROP TABLE BOOK IF EXISTS;

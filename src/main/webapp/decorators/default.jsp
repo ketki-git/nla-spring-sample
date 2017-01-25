@@ -45,7 +45,7 @@
       </p>
       <div class="row primary-brand">
         <div class="col-md-8 col-sm-8 clearfix">
-          <a href="/" title="National Library of Australia logo" rel="home" class="header__logo svg">           
+          <a href="${pageContext.request.contextPath}" title="National Library of Australia logo" rel="home" class="header__logo svg">           
               <img src="${pageContext.request.contextPath}/img/logo.png" alt="NLA logo"/>           
           </a>
         </div>
