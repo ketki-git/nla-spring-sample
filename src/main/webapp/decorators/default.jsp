@@ -41,7 +41,7 @@
 
     <div class="container">
       <p class="nla row text-center">
-        <a href="http://nla.gov.au">National Library of Australia</a>
+        <a href="http://nla.gov.au">National Library of Australia - SAMPLE APP</a>
       </p>
       <div class="row primary-brand">
         <div class="col-md-8 col-sm-8 clearfix">

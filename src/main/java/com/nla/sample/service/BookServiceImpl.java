@@ -9,6 +9,13 @@ import com.nla.sample.dao.BookDao;
 import com.nla.sample.model.Book;
 import com.nla.sample.model.Customer;
 
+/**
+ * Business layer: the service implementation of the BookService interface.
+ * 
+ * @author Ketki
+ *
+ */
+
 @Service
 public class BookServiceImpl implements BookService {
 

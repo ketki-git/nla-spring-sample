@@ -1,3 +1,8 @@
+body{    
+	font-family: sans-serif;
+	font-size: 14px !important;
+}
+
 .nla {
     background: none repeat scroll 0 0 #000;
     color: #fff;
@@ -14,13 +19,9 @@
 }
 
 .panel-body {
-    font-size: 0.9em;
-    font-style: italic;
-}
-
-body{    
-	font-family: sans-serif;
-	font-size: 14px !important;
+/*     font-size: 0.9em; */
+/*     font-style: italic; */
+/*     padding-left: 0px; */
 }
 
 .btn, .dropdown-menu {
@@ -35,10 +36,6 @@ body{
     margin-bottom: 12px;
 }
 
-.panel-body {
-    padding-left: 0px;
-}
-
 .container.article {
     padding-left: 25px;
 }
@@ -47,10 +44,28 @@ body{
     height: 46px;
     padding-left: 0px;
     border-top: 0px;
-    border-bottom: 3px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
-#navigation .om-maximenu ul.om-menu li.om-leaf a {
-    position: none;
-    font-size: 1.5em;
+#navigation .om-maximenu ul.om-menu li.om-leaf a {    
+    font-size: 1.2em;
+}
+
+.panel-details {
+/*     font-size: 0.9em; */
+/*     line-height: 20px; */
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.panel-heading{
+	font-weight: bold;
+}
+
+.panel-italic{
+	font-style: italic;
+}
+
+.panel-small-text{
+	font-size: 0.9em;
 }

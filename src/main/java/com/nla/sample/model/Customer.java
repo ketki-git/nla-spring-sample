@@ -1,5 +1,11 @@
 package com.nla.sample.model;
 
+/**
+ * POJO class for customer/borrower
+ * 
+ * @author Ketki
+ *
+ */
 public class Customer {
 	private Long customerId;
 	private String customerName;

@@ -1,5 +1,11 @@
 package com.nla.sample.model;
 
+/**
+ * POJO class for Book
+ * 
+ * @author Ketki
+ *
+ */
 public class Book {
 	String title;
 	String author;

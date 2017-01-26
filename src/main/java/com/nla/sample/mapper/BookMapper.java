@@ -7,6 +7,12 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.nla.sample.model.Book;
 
+/**
+ * A row mapper between Book object and table row-column
+ * 
+ * @author Ketki
+ *
+ */
 public class BookMapper implements RowMapper<Book> {
 
 	public Book mapRow(ResultSet rs, int rowNum) throws SQLException {

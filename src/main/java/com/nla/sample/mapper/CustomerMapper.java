@@ -7,6 +7,12 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.nla.sample.model.Customer;
 
+/**
+ * A row mapper between Customer object and table row-column
+ * 
+ * @author Ketki
+ *
+ */
 public class CustomerMapper implements RowMapper<Customer> {
 
 	public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {

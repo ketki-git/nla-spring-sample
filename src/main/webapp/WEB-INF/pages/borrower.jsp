@@ -1,70 +1,68 @@
-<%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
- 
+<%@ page language="java" pageEncoding="UTF-8"
+	contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <html>
 <head>
-    <title>National Library of Australia</title>
+<title>National Library of Australia</title>
 </head>
 <body>
-	<h2>Borrower Details</h2>	
-	  
-	<c:if test="${not empty borrower}">	
-				
-		<table id="customersTable" class="table table-striped">
-    		<thead>
-      			<tr>
-        			<th>Name</th>
-        			<th>No. of borrowed books</th>
-        			<th>Borrowed Books</th>        			
-     			</tr>
-    		</thead>
-    		<tbody>					
-					<tr>
-						<td>
-							<a data-toggle="collapse" href="#collapse${borrower.customerId}">${borrower.customerName}</a>
-							<div id="collapse${borrower.customerId}" class="panel-collapse">
-						      <div class="panel-body">
-						      		<b>Address:</b><br/>
-						      		${borrower.customerAddress}, 
-						      		${borrower.customerCity}<br/>
-						      		${borrower.customerState} - ${borrower.customerZip}<br/><br/>
-						      		<b>Phone:</b> ${borrower.customerPhone}<br/><br/>
-						      		<b>Email:</b> ${borrower.customerEmail}
-						      </div>
-						    </div>
-						</td>	
+
+	<c:choose>
+		<c:when test="${not empty borrower}">
+			<h2>Borrower Details</h2>
+			<div class="panel-details">
+				<b>Borrower ID: </b>NLA0998${borrower.customerId} <br />
+				<br /> <b>Name: </b>${borrower.customerName} <br />
+				<br /> <b>Address: </b><br />
+				<br /> ${borrower.customerAddress}, ${borrower.customerCity}<br />
+				${borrower.customerState} - ${borrower.customerZip}<br /> <br /> <b>Phone:
+				</b>${borrower.customerPhone}<br /> <br /> <b>Email: </b>${borrower.customerEmail}
+			</div>
+			<br/>
+			<%-- 			<c:choose> --%>
+			<%-- 				<c:when test="${not empty booksBorrowed}"> --%>
+			<%-- 				        			${fn:length(booksBorrowed)}	        			 --%>
+			<%-- 				        		</c:when> --%>
+			<%-- 				<c:otherwise> --%>
+			<!-- 							        None -->
+			<%-- 							    </c:otherwise> --%>
+			<%-- 			</c:choose> --%>
+
+			<div class="panel panel-default">
+						<div class="panel-heading">Books Borrowed By
+							"${borrower.customerName}"</div>
+
+						<div class="panel-body panel-details">
 						
-						<td>
-							<c:choose>
-				        		<c:when test="${not empty booksBorrowed}">
-				        			${fn:length(booksBorrowed)}	        			
-				        		</c:when>
-				        		<c:otherwise>
-							        None
-							    </c:otherwise>
-				        	</c:choose>
-			        	</td>	
-			        			        	
-			        	<td>
-			        		<c:choose>
-				        		<c:when test="${not empty booksBorrowed}">
-				        			<c:forEach var="listValue" items="${booksBorrowed}">			        				
-				        				<b>Title: </b>${listValue.title}<br/>
-				        				<b>Author: </b>${listValue.author}<br/><br/>
-				        			</c:forEach>			        			
-				        		</c:when>
-				        		<c:otherwise>
-							        None
-							    </c:otherwise>
-			        		</c:choose>
-			        	</td>			        			       
-			    	</tr>   			
-			</tbody>
-  		</table>
-		
-	</c:if>
+			<c:choose>
+				<c:when test="${not empty booksBorrowed}">					
+							<c:forEach var="listValue" items="${booksBorrowed}">
+								<b>Title: </b>
+
+								<a title="View Book Details" target="_book"
+									data-toggle="tooltip"
+									href="${pageContext.request.contextPath}/book/${listValue.id}">${listValue.title}</a>
+								<br />
+								<b>Author: </b>${listValue.author}<br />
+								<hr style="border-top: dotted 1px;" />
+							</c:forEach>						
+				</c:when>
+				<c:otherwise>None</c:otherwise>
+			</c:choose>
+			</div>
+					</div>
+		</c:when>
+		<c:otherwise>
+			<h3>
+				Sorry, requested borrower's details cannot be found. Please view the list
+				of all available borrowers <a title="View Borrowers" data-toggle="tooltip"
+					href="${pageContext.request.contextPath}/borrowers/">here</a>
+			</h3>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

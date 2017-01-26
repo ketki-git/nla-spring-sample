@@ -13,7 +13,7 @@
 		
 		<input type="text" id="searchCustomers" onkeyup="filterResults('searchCustomers', 'customersTable')" placeholder="Search borrowers..">
 		
-		<table id="customersTable" class="table table-striped">
+		<table id="customersTable" class="table table-striped table-condensed">
     		<thead>
       			<tr>
         			<th>Borrower ID</th>
@@ -24,11 +24,11 @@
     		<tbody>		
 				<c:forEach var="listValue" items="${customers}">			
 					<tr>
-						<td>${listValue.customerId}</td>
+						<td>NLA0998${listValue.customerId}</td>
 						<td>
 							<a data-toggle="collapse" href="#collapse${listValue.customerId}">${listValue.customerName}</a>
 							<div id="collapse${listValue.customerId}" class="panel-collapse collapse">
-						      <div class="panel-body">
+						      <div class="panel-body panel-italic panel-small-text">
 						      		<b>Address:</b><br/>
 						      		${listValue.customerAddress}, 
 						      		${listValue.customerCity}<br/>

@@ -9,6 +9,12 @@ import com.nla.sample.dao.CustomerDao;
 import com.nla.sample.model.Book;
 import com.nla.sample.model.Customer;
 
+/**
+ * Business layer: the service implementation of the CustomerService interface.
+ * 
+ * @author Ketki
+ *
+ */
 @Service
 public class CustomerServiceImpl implements CustomerService {
 

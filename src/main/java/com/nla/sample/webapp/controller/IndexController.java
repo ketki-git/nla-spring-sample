@@ -29,11 +29,21 @@ public class IndexController {
 	@Autowired
 	private ApplicationContext appContext;
 
+	/**
+	 * Page to display when top level URL is accessed
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index() {
 		return books();
 	}
 
+	/**
+	 * Returns list of all available books in the database
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value = "/books", method = RequestMethod.GET)
 	public ModelAndView books() {
 
@@ -49,6 +59,12 @@ public class IndexController {
 		return model;
 	}
 
+	/**
+	 * Returns specific book details
+	 * 
+	 * @param bookId
+	 * @return
+	 */
 	@RequestMapping(value = "/book/{bookId}", method = RequestMethod.GET)
 	public ModelAndView book(@PathVariable String bookId) {
 
@@ -60,14 +76,13 @@ public class IndexController {
 			bookService = appContext.getBean("bookService", BookService.class);
 		}
 
-		ModelAndView model = null;
+		ModelAndView model = new ModelAndView("book");
 
 		if (bookId != null) {
 
 			Customer borrower = bookService.viewBorrower(Long.parseLong(bookId));
 			Book book = bookService.findByBookId(Long.parseLong(bookId));
 
-			model = new ModelAndView("book");
 			model.addObject("borrower", borrower);
 			model.addObject("book", book);
 		}
@@ -75,6 +90,11 @@ public class IndexController {
 		return model;
 	}
 
+	/**
+	 * Returns list of all customers/borrowers
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value = "/borrowers", method = RequestMethod.GET)
 	public ModelAndView borrowers() {
 
@@ -90,6 +110,12 @@ public class IndexController {
 		return model;
 	}
 
+	/**
+	 * Returns details of a customer/borrower
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping(value = "/borrower/{id}", method = RequestMethod.GET)
 	public ModelAndView borrower(@PathVariable String id) {
 
