@@ -9,12 +9,7 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-	<repositories>
-	    <repository>
-	      <id>mvn-repo</id>
-	      <url>http://myserver/repo</url>
-	    </repository>
-	    
+	<repositories>	    
 	    <repository>
 	      <id>mvn-repo-third-party</id>
 	      <url>https://maven.atlassian.com/3rdparty/</url>
